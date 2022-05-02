@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: javadocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javadocker
+  template:
+    metadata:
+      labels:
+        app: javadocker 
+    spec:
+      containers:
+        - name: javadocker 
+          image: myprivateacrdemo.azurecr.io/javadocker
+          ports:
+          - containerPort: 80
